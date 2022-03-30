@@ -1,5 +1,6 @@
 alert('您已被封号')
 alert('先蓝后黄')
+alert('开源网址：https://github.com/CHKEric/Doge')
 var can = document.getElementById('can');
 // 传入2d元素
 var ctx = can.getContext('2d');
