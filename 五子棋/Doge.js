@@ -1,7 +1,7 @@
-alert('您已被封号')
+var a = location.href.split('/');
+alert('文件名为'+ a)
 alert('先蓝后黄')
-alert('开源网址：https://github.com/CHKEric/Doge')
-alert('可能无法打开，请在https://github.com/CHKEric/Doge上打开Code然后点Download ZIP以下载源码，打开index.html，已下载的话请无视')
+alert('开源：https://github.com/CHKEric/Doge')
 var can = document.getElementById('can');
 // 传入2d元素
 var ctx = can.getContext('2d');
@@ -62,6 +62,7 @@ function isWin(x,y){
 			num=0;
 		}
 		if(num==5){
+			num=num+1
 			win();
 			break;
 		}
@@ -71,9 +72,10 @@ function isWin(x,y){
 		if(chess[i][y]==chess[x][y]){
 			num= num + 1;
 		}else{
-			num==0;
+			num=0;
 		}
 		if(num==5){
+			num=num+1
 			win();
 			break;
 		}
@@ -83,9 +85,10 @@ function isWin(x,y){
 		if(chess[i][n]==chess[x][y]){
 			num=num+1;
 		}else{
-			num==0;
+			num=0;
 		}
 		if(num==5){
+			num=num+1
 			win();
 			break;
 		}
@@ -95,16 +98,27 @@ function isWin(x,y){
 		if(chess[n][i]==chess[x][y]){
 			num=num+1;
 		}else{
-			num==0;
+			num=0;
 		}
 		if(num==5){
+			num=num+1
 			win();
 			break;
 		}
 	}
 }
+ function sleep(milliSeconds) {
+    var startTime = new Date().getTime();
+    while (new Date().getTime() < startTime + milliSeconds) {
+        console.log(new Date().getTime());
+    }
+}
+
+ 
 function win(){
 	document.getElementById("sound1").play();
-	alert(flag?"蓝狗头成为新狗王！恭喜！！！":"黄狗头成为新狗王！恭喜！！！");
+	alert(flag?"蓝方胜利！":"黄方胜利！")
+	alert('请自行刷新,否则3秒后自动刷新');
+	sleep(3000)
 	window.location.reload();
 }
